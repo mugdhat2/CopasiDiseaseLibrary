@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.29 (Build 228) (http://www.copasi.org) at 2021-02-25T17:06:38Z -->
+<!-- generated with COPASI 4.30 (Build 240) (http://www.copasi.org) at 2021-02-25T17:14:37Z -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
-<COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="29" versionDevel="228" copasiSourcesModified="0">
+<COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="30" versionDevel="240" copasiSourcesModified="0">
   <ListOfFunctions>
     <Function key="Function_6" name="Constant flux (irreversible)" type="PreDefined" reversible="false">
       <MiriamAnnotation>
@@ -70,9 +70,7 @@ Reaction scheme where the products are created from the reactants and the change
     </Function>
     <Function key="Function_41" name="Logistic Incidence" type="UserDefined" reversible="unspecified">
       <MiriamAnnotation>
-<rdf:RDF
-   xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Function_41">
     <dcterms:created>
       <rdf:Description>
@@ -81,7 +79,6 @@ Reaction scheme where the products are created from the reactants and the change
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
-
       </MiriamAnnotation>
       <Expression>
         k1*S*I/(k2+I)
@@ -134,6 +131,22 @@ Reaction scheme where the products are created from the reactants and the change
     </dcterms:created>
     <dcterms:creator>
       <rdf:Description>
+        <vCard:EMAIL>briandk@virginia.edu</vCard:EMAIL>
+        <vCard:N>
+          <rdf:Description>
+            <vCard:Family>Klahn</vCard:Family>
+            <vCard:Given>Brian</vCard:Given>
+          </rdf:Description>
+        </vCard:N>
+        <vCard:ORG>
+          <rdf:Description>
+            <vCard:Orgname>University of Virginia</vCard:Orgname>
+          </rdf:Description>
+        </vCard:ORG>
+      </rdf:Description>
+    </dcterms:creator>
+    <dcterms:creator>
+      <rdf:Description>
         <vCard:EMAIL>mat3kk@virginia.edu</vCard:EMAIL>
         <vCard:N>
           <rdf:Description>
@@ -180,22 +193,6 @@ Reaction scheme where the products are created from the reactants and the change
         </vCard:ORG>
       </rdf:Description>
     </dcterms:creator>
-    <dcterms:creator>
-      <rdf:Description>
-        <vCard:EMAIL>briandk@virginia.edu</vCard:EMAIL>
-        <vCard:N>
-          <rdf:Description>
-            <vCard:Family>Klahn</vCard:Family>
-            <vCard:Given>Brian</vCard:Given>
-          </rdf:Description>
-        </vCard:N>
-        <vCard:ORG>
-          <rdf:Description>
-            <vCard:Orgname>University of Virginia</vCard:Orgname>
-          </rdf:Description>
-        </vCard:ORG>
-      </rdf:Description>
-    </dcterms:creator>
     <dcterms:modified>
       <rdf:Description>
         <dcterms:W3CDTF>2021-02-17T13:02:23</dcterms:W3CDTF>
@@ -230,6 +227,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Number of humans
+        </Comment>
       </Compartment>
       <Compartment key="Compartment_1" name="Water" simulationType="fixed" dimensionality="0" addNoise="false">
         <MiriamAnnotation>
@@ -246,25 +246,36 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Bacteria in water
+        </Comment>
       </Compartment>
     </ListOfCompartments>
     <ListOfMetabolites>
       <Metabolite key="Metabolite_0" name="S" simulationType="reactions" compartment="Compartment_0" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#Metabolite_0">
-<dcterms:created>
-<rdf:Description>
-<dcterms:W3CDTF>2021-02-17T17:24:30Z</dcterms:W3CDTF>
-</rdf:Description>
-</dcterms:created>
-</rdf:Description>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="#Metabolite_0">
+    <dcterms:created>
+      <rdf:Description>
+        <dcterms:W3CDTF>2021-02-17T17:24:30Z</dcterms:W3CDTF>
+      </rdf:Description>
+    </dcterms:created>
+  </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Susceptible individuals
+        </Comment>
       </Metabolite>
       <Metabolite key="Metabolite_1" name="I" simulationType="reactions" compartment="Compartment_0" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Metabolite_1">
     <dcterms:created>
       <rdf:Description>
@@ -273,20 +284,30 @@ Run Time Course for time course simulation
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Infectious individuals
+        </Comment>
       </Metabolite>
       <Metabolite key="Metabolite_2" name="R" simulationType="reactions" compartment="Compartment_0" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#Metabolite_2">
-<dcterms:created>
-<rdf:Description>
-<dcterms:W3CDTF>2021-02-17T17:24:32Z</dcterms:W3CDTF>
-</rdf:Description>
-</dcterms:created>
-</rdf:Description>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="#Metabolite_2">
+    <dcterms:created>
+      <rdf:Description>
+        <dcterms:W3CDTF>2021-02-17T17:24:32Z</dcterms:W3CDTF>
+      </rdf:Description>
+    </dcterms:created>
+  </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Recovered individuals
+        </Comment>
       </Metabolite>
       <Metabolite key="Metabolite_3" name="B" simulationType="reactions" compartment="Compartment_1" addNoise="false">
         <MiriamAnnotation>
@@ -309,7 +330,9 @@ Run Time Course for time course simulation
       </Metabolite>
       <Metabolite key="Metabolite_4" name="N" simulationType="assignment" compartment="Compartment_0" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Metabolite_4">
     <dcterms:created>
       <rdf:Description>
@@ -318,7 +341,11 @@ Run Time Course for time course simulation
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Total human population
+        </Comment>
         <Expression>
           &lt;CN=Root,Model=Dysentry,Vector=Compartments[Humans],Vector=Metabolites[S],Reference=ParticleNumber>+&lt;CN=Root,Model=Dysentry,Vector=Compartments[Humans],Vector=Metabolites[I],Reference=ParticleNumber>+&lt;CN=Root,Model=Dysentry,Vector=Compartments[Humans],Vector=Metabolites[R],Reference=ParticleNumber>
         </Expression>
@@ -340,6 +367,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Total birth rate
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_1" name="mu" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -356,6 +386,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Natural mortality rate (per capita)
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_2" name="alpha" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -372,6 +405,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Rate of waning immunity of recovered individuals
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_3" name="gamma" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -388,6 +424,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Recovery rate
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_4" name="d" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -404,6 +443,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Disease induced mortality rate
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_5" name="beta_h" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -420,6 +462,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Transmission coefficient of infectious individual
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_6" name="beta_B" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -436,6 +481,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Transmission coefficient of contaminated water
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_7" name="epsilon" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -452,6 +500,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Bacterial shedding rate of infectious individual
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_8" name="sigma" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -468,6 +519,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Rate of bacterial decay in water
+        </Comment>
       </ModelValue>
       <ModelValue key="ModelValue_9" name="K" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
@@ -484,12 +538,17 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Half saturation constant of bacteria in water
+        </Comment>
       </ModelValue>
     </ListOfModelValues>
     <ListOfReactions>
       <Reaction key="Reaction_0" name="Birth" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_0">
     <dcterms:created>
       <rdf:Description>
@@ -498,7 +557,11 @@ Run Time Course for time course simulation
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Natural birth of individuals as susceptible
+        </Comment>
         <ListOfProducts>
           <Product metabolite="Metabolite_0" stoichiometry="1"/>
         </ListOfProducts>
@@ -515,7 +578,9 @@ Run Time Course for time course simulation
       </Reaction>
       <Reaction key="Reaction_1" name="Death S" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_1">
     <dcterms:created>
       <rdf:Description>
@@ -524,12 +589,16 @@ Run Time Course for time course simulation
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Natural mortality of suceptible individuals
+        </Comment>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
         </ListOfSubstrates>
         <ListOfConstants>
-          <Constant key="Parameter_5369" name="k1" value="0.003199"/>
+          <Constant key="Parameter_5369" name="k1" value="0.000457"/>
         </ListOfConstants>
         <KineticLaw function="Function_13" unitType="Default" scalingCompartment="CN=Root,Model=Dysentry,Vector=Compartments[Humans]">
           <ListOfCallParameters>
@@ -544,7 +613,9 @@ Run Time Course for time course simulation
       </Reaction>
       <Reaction key="Reaction_2" name="Death R" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_2">
     <dcterms:created>
       <rdf:Description>
@@ -553,12 +624,16 @@ Run Time Course for time course simulation
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Natural mortality of recovered individuals
+        </Comment>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_2" stoichiometry="1"/>
         </ListOfSubstrates>
         <ListOfConstants>
-          <Constant key="Parameter_5368" name="k1" value="0.003199"/>
+          <Constant key="Parameter_5368" name="k1" value="0.000457"/>
         </ListOfConstants>
         <KineticLaw function="Function_13" unitType="Default" scalingCompartment="CN=Root,Model=Dysentry,Vector=Compartments[Humans]">
           <ListOfCallParameters>
@@ -573,7 +648,9 @@ Run Time Course for time course simulation
       </Reaction>
       <Reaction key="Reaction_3" name="Death I" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_3">
     <dcterms:created>
       <rdf:Description>
@@ -582,12 +659,16 @@ Run Time Course for time course simulation
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Natural mortality of infectious individuals
+        </Comment>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_1" stoichiometry="1"/>
         </ListOfSubstrates>
         <ListOfConstants>
-          <Constant key="Parameter_5367" name="k1" value="0.003199"/>
+          <Constant key="Parameter_5367" name="k1" value="0.000457"/>
         </ListOfConstants>
         <KineticLaw function="Function_13" unitType="Default" scalingCompartment="CN=Root,Model=Dysentry,Vector=Compartments[Humans]">
           <ListOfCallParameters>
@@ -615,6 +696,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Recovery of infectious infividual
+        </Comment>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_1" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -622,7 +706,7 @@ Run Time Course for time course simulation
           <Product metabolite="Metabolite_2" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_5366" name="k1" value="0.1106"/>
+          <Constant key="Parameter_5366" name="k1" value="0.123659"/>
         </ListOfConstants>
         <KineticLaw function="Function_13" unitType="Default" scalingCompartment="CN=Root,Model=Dysentry,Vector=Compartments[Humans]">
           <ListOfCallParameters>
@@ -637,7 +721,9 @@ Run Time Course for time course simulation
       </Reaction>
       <Reaction key="Reaction_5" name="Waning immunity" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_5">
     <dcterms:created>
       <rdf:Description>
@@ -646,7 +732,11 @@ Run Time Course for time course simulation
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
+        <Comment>
+          Waning of temporary immunity due to infection
+        </Comment>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_2" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -654,7 +744,7 @@ Run Time Course for time course simulation
           <Product metabolite="Metabolite_0" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_5365" name="k1" value="0.0211"/>
+          <Constant key="Parameter_5365" name="k1" value="0.140503"/>
         </ListOfConstants>
         <KineticLaw function="Function_13" unitType="Default" scalingCompartment="CN=Root,Model=Dysentry,Vector=Compartments[Humans]">
           <ListOfCallParameters>
@@ -682,11 +772,14 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Disease induced death of infectious individuals
+        </Comment>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_1" stoichiometry="1"/>
         </ListOfSubstrates>
         <ListOfConstants>
-          <Constant key="Parameter_5364" name="k1" value="0.55602"/>
+          <Constant key="Parameter_5364" name="k1" value="0.517443"/>
         </ListOfConstants>
         <KineticLaw function="Function_13" unitType="Default" scalingCompartment="CN=Root,Model=Dysentry,Vector=Compartments[Humans]">
           <ListOfCallParameters>
@@ -714,6 +807,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Infection transmission to a susceptible upon coming in contact with infectious individual(s)
+        </Comment>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -769,7 +865,7 @@ Run Time Course for time course simulation
           <Modifier metabolite="Metabolite_3" stoichiometry="1"/>
         </ListOfModifiers>
         <ListOfConstants>
-          <Constant key="Parameter_5362" name="k2" value="0.147493"/>
+          <Constant key="Parameter_5362" name="k2" value="28158"/>
           <Constant key="Parameter_5361" name="k1" value="0.04465"/>
         </ListOfConstants>
         <KineticLaw function="Function_41" unitType="Default">
@@ -791,7 +887,9 @@ Run Time Course for time course simulation
       </Reaction>
       <Reaction key="Reaction_9" name="Bacterial shedding by I" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_9">
     <dcterms:created>
       <rdf:Description>
@@ -800,6 +898,7 @@ Run Time Course for time course simulation
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
         <ListOfProducts>
           <Product metabolite="Metabolite_3" stoichiometry="1"/>
@@ -836,6 +935,9 @@ Run Time Course for time course simulation
 </rdf:RDF>
 
         </MiriamAnnotation>
+        <Comment>
+          Natural (exponential) decay of bacteria
+        </Comment>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_3" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -863,7 +965,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#ModelParameterSet_1">
 <dcterms:created>
 <rdf:Description>
-<dcterms:W3CDTF>2021-02-24T15:53:18Z</dcterms:W3CDTF>
+<dcterms:W3CDTF>2021-02-25T17:07:45Z</dcterms:W3CDTF>
 </rdf:Description>
 </dcterms:created>
 </rdf:Description>
@@ -980,12 +1082,10 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           </ModelParameterGroup>
         </ModelParameterGroup>
       </ModelParameterSet>
-      <ModelParameterSet key="ModelParameterSet_0" name="MyFit">
+      <ModelParameterSet key="ModelParameterSet_3" name="MyFit">
         <MiriamAnnotation>
-<rdf:RDF
-   xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <rdf:Description rdf:about="#ModelParameterSet_0">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="#ModelParameterSet_3">
     <dcterms:created>
       <rdf:Description>
         <dcterms:W3CDTF>2021-02-24T15:53:18Z</dcterms:W3CDTF>
@@ -993,7 +1093,6 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
-
         </MiriamAnnotation>
         <ModelParameterGroup cn="String=Initial Time" type="Group">
           <ModelParameter cn="CN=Root,Model=Dysentry" value="0" type="Model" simulationType="time"/>
@@ -1106,12 +1205,10 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           </ModelParameterGroup>
         </ModelParameterGroup>
       </ModelParameterSet>
-      <ModelParameterSet key="ModelParameterSet_2" name="Berhe et al 2019 Fig 5">
+      <ModelParameterSet key="ModelParameterSet_4" name="Berhe et al 2019 Fig 5">
         <MiriamAnnotation>
-<rdf:RDF
-   xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <rdf:Description rdf:about="#ModelParameterSet_2">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="#ModelParameterSet_4">
     <dcterms:created>
       <rdf:Description>
         <dcterms:W3CDTF>2021-02-24T15:53:18Z</dcterms:W3CDTF>
@@ -1119,7 +1216,6 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
-
         </MiriamAnnotation>
         <ModelParameterGroup cn="String=Initial Time" type="Group">
           <ModelParameter cn="CN=Root,Model=Dysentry" value="0" type="Model" simulationType="time"/>
@@ -1351,7 +1447,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
             <Parameter name="ObjectCN" type="cn" value="CN=Root,Model=Dysentry,Vector=Values[alpha],Reference=InitialValue"/>
             <Parameter name="LowerBound" type="cn" value="0"/>
             <Parameter name="UpperBound" type="cn" value="1"/>
-            <Parameter name="StartValue" type="float" value="0.14050315590385826"/>
+            <Parameter name="StartValue" type="float" value="0.14050315590000001"/>
             <ParameterGroup name="Affected Experiments">
             </ParameterGroup>
             <ParameterGroup name="Affected Cross Validation Experiments">
@@ -1387,7 +1483,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         <Parameter name="Time-Sens" type="cn" value=""/>
         <ParameterGroup name="Experiment Set">
           <ParameterGroup name="Experiment">
-            <Parameter name="Key" type="key" value="Experiment_1"/>
+            <Parameter name="Key" type="key" value="Experiment_0"/>
             <Parameter name="File Name" type="file" value="EthiopiaDysentry.csv"/>
             <Parameter name="First Row" type="unsignedInteger" value="1"/>
             <Parameter name="Last Row" type="unsignedInteger" value="53"/>
@@ -1820,9 +1916,9 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   </ListOfPlots>
   <GUI>
     <ListOfSliders>
-      <Slider key="Slider_0" associatedEntityKey="Task_16" objectCN="CN=Root,Model=Dysentry,Vector=Values[K],Reference=InitialValue" objectType="float" objectValue="200" minValue="0.1" maxValue="3e+06" tickNumber="1000" tickFactor="100" scaling="logarithmic"/>
+      <Slider key="Slider_0" associatedEntityKey="Task_16" objectCN="CN=Root,Model=Dysentry,Vector=Values[K],Reference=InitialValue" objectType="float" objectValue="28158" minValue="0.1" maxValue="3e+06" tickNumber="1000" tickFactor="100" scaling="logarithmic"/>
       <Slider key="Slider_1" associatedEntityKey="Task_16" objectCN="CN=Root,Model=Dysentry,Vector=Values[d],Reference=InitialValue" objectType="float" objectValue="0.517443" minValue="0.055602" maxValue="5.5602" tickNumber="1000" tickFactor="100" scaling="logarithmic"/>
-      <Slider key="Slider_2" associatedEntityKey="Task_16" objectCN="CN=Root,Model=Dysentry,Vector=Values[gamma],Reference=InitialValue" objectType="float" objectValue="0.139183" minValue="0.0106" maxValue="1.106" tickNumber="1000" tickFactor="100" scaling="logarithmic"/>
+      <Slider key="Slider_2" associatedEntityKey="Task_16" objectCN="CN=Root,Model=Dysentry,Vector=Values[gamma],Reference=InitialValue" objectType="float" objectValue="0.123659" minValue="0.0106" maxValue="1.106" tickNumber="1000" tickFactor="100" scaling="logarithmic"/>
     </ListOfSliders>
   </GUI>
   <ListOfUnitDefinitions>
@@ -1834,7 +1930,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Unit_0">
 <dcterms:created>
 <rdf:Description>
-<dcterms:W3CDTF>2021-02-24T15:53:15Z</dcterms:W3CDTF>
+<dcterms:W3CDTF>2021-02-25T17:07:41Z</dcterms:W3CDTF>
 </rdf:Description>
 </dcterms:created>
 </rdf:Description>
@@ -1852,7 +1948,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Unit_4">
 <dcterms:created>
 <rdf:Description>
-<dcterms:W3CDTF>2021-02-24T15:53:15Z</dcterms:W3CDTF>
+<dcterms:W3CDTF>2021-02-25T17:07:41Z</dcterms:W3CDTF>
 </rdf:Description>
 </dcterms:created>
 </rdf:Description>
@@ -1870,7 +1966,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Unit_16">
 <dcterms:created>
 <rdf:Description>
-<dcterms:W3CDTF>2021-02-24T15:53:15Z</dcterms:W3CDTF>
+<dcterms:W3CDTF>2021-02-25T17:07:41Z</dcterms:W3CDTF>
 </rdf:Description>
 </dcterms:created>
 </rdf:Description>
@@ -1888,7 +1984,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Unit_34">
 <dcterms:created>
 <rdf:Description>
-<dcterms:W3CDTF>2021-02-24T15:53:15Z</dcterms:W3CDTF>
+<dcterms:W3CDTF>2021-02-25T17:07:41Z</dcterms:W3CDTF>
 </rdf:Description>
 </dcterms:created>
 </rdf:Description>
@@ -1906,7 +2002,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Unit_68">
 <dcterms:created>
 <rdf:Description>
-<dcterms:W3CDTF>2021-02-24T15:53:15Z</dcterms:W3CDTF>
+<dcterms:W3CDTF>2021-02-25T17:07:42Z</dcterms:W3CDTF>
 </rdf:Description>
 </dcterms:created>
 </rdf:Description>
@@ -1924,7 +2020,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Unit_82">
 <dcterms:created>
 <rdf:Description>
-<dcterms:W3CDTF>2021-02-24T15:53:18Z</dcterms:W3CDTF>
+<dcterms:W3CDTF>2021-02-25T17:07:45Z</dcterms:W3CDTF>
 </rdf:Description>
 </dcterms:created>
 </rdf:Description>
