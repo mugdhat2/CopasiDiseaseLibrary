@@ -1,0 +1,5 @@
+Disease,Variable,Min,Max,Label
+typhoid,sigma,0,1,"Vaccination rate"
+typhoid,k,0,1,"Active immunity waning rate"
+cholera,c,0,1,"Disinfection rate"
+cholera,nu,0,1,"Vaccination rate"

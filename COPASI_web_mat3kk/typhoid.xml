@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by COPASI version 4.28.226 (CoRC) on 2021-04-26 15:42 with libSBML version 5.18.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="COPASI0" id="Typhoid" name="Typhoid">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <pre>Model source:
+Peter, O. J., Ibrahim, M. O., Akinduko, O. B., and Rabiu, M. (2017). Mathematical model for the control of typhoid fever. IOSR Journal of Mathematics (IOSR-JM). e-ISSN, 2278-5728.
+
+Parameter estimates source:
+Peter, O. J., Akinduko, Oluwaseun B., C. Y. Ishola, O. A. Afolabi, and A. B. Ganiyu. &quot;Series Solution Of Typhoid Fever Model Using Differential Transform Method.&quot; Malaysian Journal of Computing 3, no. 1 (2018): 67-80.
+
+Parameter estimation described for each parameter in Global Quantities.
+Assumption: &apos;I&apos; (Infectious individuals) in the coded model is equivalent to &apos;I_e&apos; (educated infectious individuals) in Peter et. al. (2018)
+
+Figures 2, 3, 5, 6 and 7 in Peter et. al. (2018) replicated for k = 0 with some differences that may originate due to the model differences (no division of infectious class and individuals in treatment not infectious in the coded model)</pre>
+      </body>
+    </notes>
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#COPASI0">
+          <dc:creator>
+            <rdf:Bag>
+              <rdf:li rdf:parseType="Resource">
+                <vCard:N rdf:parseType="Resource">
+                  <vCard:Family>Espinoza</vCard:Family>
+                  <vCard:Given>Baltazar</vCard:Given>
+                </vCard:N>
+                <vCard:EMAIL>be3dq@virginia.edu</vCard:EMAIL>
+                <vCard:ORG rdf:parseType="Resource">
+                  <vCard:Orgname>University of Virginia</vCard:Orgname>
+                </vCard:ORG>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard:N rdf:parseType="Resource">
+                  <vCard:Family>Hoops</vCard:Family>
+                  <vCard:Given>Stefan</vCard:Given>
+                </vCard:N>
+                <vCard:EMAIL>shoops@virginia.edu</vCard:EMAIL>
+                <vCard:ORG rdf:parseType="Resource">
+                  <vCard:Orgname>University of Virginia</vCard:Orgname>
+                </vCard:ORG>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard:N rdf:parseType="Resource">
+                  <vCard:Family>Klahn</vCard:Family>
+                  <vCard:Given>Brian</vCard:Given>
+                </vCard:N>
+                <vCard:EMAIL>briandk@virginia.edu</vCard:EMAIL>
+                <vCard:ORG rdf:parseType="Resource">
+                  <vCard:Orgname>University of Virginia</vCard:Orgname>
+                </vCard:ORG>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard:N rdf:parseType="Resource">
+                  <vCard:Family>Thakur</vCard:Family>
+                  <vCard:Given>Mugdha</vCard:Given>
+                </vCard:N>
+                <vCard:EMAIL>mat3kk@virginia.edu</vCard:EMAIL>
+                <vCard:ORG rdf:parseType="Resource">
+                  <vCard:Orgname>University of Virginia</vCard:Orgname>
+                </vCard:ORG>
+              </rdf:li>
+            </rdf:Bag>
+          </dc:creator>
+          <dcterms:created rdf:parseType="Resource">
+            <dcterms:W3CDTF>2021-02-25T21:42:16Z</dcterms:W3CDTF>
+          </dcterms:created>
+          <dcterms:modified rdf:parseType="Resource">
+            <dcterms:W3CDTF>2021-02-25T17:25:39Z</dcterms:W3CDTF>
+          </dcterms:modified>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="urn:miriam:unknown:2600-8238"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="urn:miriam:unknown:2278-5728"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
+        </rdf:Description>
+      </rdf:RDF>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:CopasiMT="http://www.copasi.org/RDF/MiriamTerms#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#">
+          <rdf:Description rdf:about="#COPASI0">
+            <dcterms:bibliographicCitation>
+              <rdf:Description>
+                <dcterms:description>e-ISSN</dcterms:description>
+                <CopasiMT:isDescribedBy rdf:resource="urn:miriam:unknown:2278-5728"/>
+              </rdf:Description>
+            </dcterms:bibliographicCitation>
+            <dcterms:bibliographicCitation>
+              <rdf:Description>
+                <dcterms:description>e-ISSN</dcterms:description>
+                <CopasiMT:isDescribedBy rdf:resource="urn:miriam:unknown:2600-8238"/>
+              </rdf:Description>
+            </dcterms:bibliographicCitation>
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2021-02-25T21:42:16Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+            <dcterms:creator>
+              <rdf:Description>
+                <vCard:EMAIL>briandk@virginia.edu</vCard:EMAIL>
+                <vCard:N>
+                  <rdf:Description>
+                    <vCard:Family>Klahn</vCard:Family>
+                    <vCard:Given>Brian</vCard:Given>
+                  </rdf:Description>
+                </vCard:N>
+                <vCard:ORG>
+                  <rdf:Description>
+                    <vCard:Orgname>University of Virginia</vCard:Orgname>
+                  </rdf:Description>
+                </vCard:ORG>
+              </rdf:Description>
+            </dcterms:creator>
+            <dcterms:creator>
+              <rdf:Description>
+                <vCard:EMAIL>mat3kk@virginia.edu</vCard:EMAIL>
+                <vCard:N>
+                  <rdf:Description>
+                    <vCard:Family>Thakur</vCard:Family>
+                    <vCard:Given>Mugdha</vCard:Given>
+                  </rdf:Description>
+                </vCard:N>
+                <vCard:ORG>
+                  <rdf:Description>
+                    <vCard:Orgname>University of Virginia</vCard:Orgname>
+                  </rdf:Description>
+                </vCard:ORG>
+              </rdf:Description>
+            </dcterms:creator>
+            <dcterms:creator>
+              <rdf:Description>
+                <vCard:EMAIL>be3dq@virginia.edu</vCard:EMAIL>
+                <vCard:N>
+                  <rdf:Description>
+                    <vCard:Family>Espinoza</vCard:Family>
+                    <vCard:Given>Baltazar</vCard:Given>
+                  </rdf:Description>
+                </vCard:N>
+                <vCard:ORG>
+                  <rdf:Description>
+                    <vCard:Orgname>University of Virginia</vCard:Orgname>
+                  </rdf:Description>
+                </vCard:ORG>
+              </rdf:Description>
+            </dcterms:creator>
+            <dcterms:creator>
+              <rdf:Description>
+                <vCard:EMAIL>shoops@virginia.edu</vCard:EMAIL>
+                <vCard:N>
+                  <rdf:Description>
+                    <vCard:Family>Hoops</vCard:Family>
+                    <vCard:Given>Stefan</vCard:Given>
+                  </rdf:Description>
+                </vCard:N>
+                <vCard:ORG>
+                  <rdf:Description>
+                    <vCard:Orgname>University of Virginia</vCard:Orgname>
+                  </rdf:Description>
+                </vCard:ORG>
+              </rdf:Description>
+            </dcterms:creator>
+            <dcterms:modified>
+              <rdf:Description>
+                <dcterms:W3CDTF>2021-02-25T17:25:39</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:modified>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+    </annotation>
+    <listOfFunctionDefinitions>
+      <functionDefinition metaid="COPASI31" id="Constant_flux__irreversible" name="Constant flux (irreversible)">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI31">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:41:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> v </ci>
+            </bvar>
+            <ci> v </ci>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI32" id="Contagion" name="Contagion">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI32">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:55:39Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> k1 </ci>
+            </bvar>
+            <bvar>
+              <ci> S </ci>
+            </bvar>
+            <bvar>
+              <ci> I </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> k1 </ci>
+              <ci> S </ci>
+              <ci> I </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="length" name="length">
+        <listOfUnits>
+          <unit kind="metre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area" name="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume" name="volume">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance" name="substance">
+        <listOfUnits>
+          <unit kind="item" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="COPASI1" id="Humans" name="Humans" spatialDimensions="0" size="1" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI1">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:48:35Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="COPASI2" id="P" name="P" compartment="Humans" initialConcentration="100" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Protected (Vaccinated) individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:48:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI3" id="S" name="S" compartment="Humans" initialConcentration="200" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Susceptible individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:48:46Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI4" id="I" name="I" compartment="Humans" initialConcentration="120" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Infectious individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI4">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:48:47Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI5" id="T" name="T" compartment="Humans" initialConcentration="80" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Individuals in treatment</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:48:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI6" id="R" name="R" compartment="Humans" initialConcentration="60" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Recovered individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:48:54Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter metaid="COPASI7" id="sigma" name="sigma" value="0.092" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Vaccination rate (that is, proportion of protected individuals recruited)
+
+Estimate reference: tau/Lambda in Peter et. al. (2018)
+
+Use slider to vary this parameter value.</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:49:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI8" id="Lambda" name="Lambda" value="200" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Total rate of recruitment of individuals into the system
+
+Estimate reference: Lambda in Peter et. al. (2018)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:49:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI9" id="gamma" name="gamma" value="0.5" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Rate of waning immunity of protected individuals
+
+Estimate reference: omega in Peter et. al. (2018)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:49:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI10" id="mu" name="mu" value="0.142" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Natural mortality rate
+
+Estimate reference: mu in Peter et. al. (2018)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:49:50Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI11" id="Lambda_P" name="Lambda_P" value="18.4" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Recruitment rate of protected individuals (Lambda*vaccination rate)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:49:56Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI12" id="Lambda_S" name="Lambda_S" value="181.6" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Recruitment rate of unimmunized individuals (Lambda*(1-vaccination rate))</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:50:01Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI13" id="alpha" name="alpha" value="0.05" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Infection transmission coefficient
+
+Estimate reference: beta_2 in Peter et. al. (2018)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:50:05Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI14" id="beta" name="beta" value="0.3" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Treatment initiation rate
+
+Estimate reference: phi_2 in Peter et. al. (2018)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:50:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI15" id="epsilon" name="epsilon" value="0.4" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Recovery rate.
+
+Estimate reference: epsilon in Peter et. al. (2018)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI15">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:50:15Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI16" id="delta" name="delta" value="0.075" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Disease induced mortality rate
+
+Estimate reference: delta in Peter et. al. (2018)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI16">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:57:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI17" id="k" name="k" value="0" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Immunity waning rate of recovered individuals&apos; temporary immunity
+
+Assumed. Use sliders in Time Course to vary.
+
+k = 0 to replicate results in Peter et. al. (2018)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI17">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T22:01:34Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter id="ModelValue_34" name="Initial for Lambda" value="200">
+        <annotation>
+          <initialValue xmlns="http://copasi.org/initialValue" parent="Lambda"/>
+        </annotation>
+      </parameter>
+      <parameter id="ModelValue_33" name="Initial for sigma" value="0.092">
+        <annotation>
+          <initialValue xmlns="http://copasi.org/initialValue" parent="sigma"/>
+        </annotation>
+      </parameter>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="ModelValue_34">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> Lambda </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="ModelValue_33">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> sigma </ci>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="Lambda_S">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> ModelValue_34 </ci>
+            <apply>
+              <minus/>
+              <cn> 1 </cn>
+              <ci> ModelValue_33 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Lambda_P">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> ModelValue_34 </ci>
+            <ci> ModelValue_33 </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction metaid="COPASI18" id="Birth__Vaccinated" name="Birth- Vaccinated" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Recruitment of individuals in the protected class (immunized)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI18">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:49:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfProducts>
+          <speciesReference species="P" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <apply>
+                <ci> Constant_flux__irreversible </ci>
+                <ci> Lambda_P </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI19" id="Birth__Susceptible" name="Birth- Susceptible" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Recruitment of individuals in the susceptibe class (not immunized)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI19">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:51:33Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfProducts>
+          <speciesReference species="S" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <apply>
+                <ci> Constant_flux__irreversible </ci>
+                <ci> Lambda_S </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI20" id="Waning_immunity___Vaccination" name="Waning immunity - Vaccination" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Waning immunity in protected (vaccinated) individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI20">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:51:57Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="P" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> gamma </ci>
+              <ci> P </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI21" id="Death_P" name="Death P" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Natural mortality of protected individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI21">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:52:35Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="P" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> mu </ci>
+              <ci> P </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI22" id="Death_S" name="Death S" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Natural mortality of susceptible individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI22">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:52:58Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="S" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> mu </ci>
+              <ci> S </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI23" id="Infection" name="Infection" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Infection transmission to a susceptible individual upon contact with infectious individual</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI23">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:56:12Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="S" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="I" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="I"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <apply>
+                <ci> Contagion </ci>
+                <ci> alpha </ci>
+                <ci> S </ci>
+                <ci> I </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI24" id="Disease_induced_death" name="Disease induced death" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Disease induced death (due to lack of treatment)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI24">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:56:58Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="I" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> delta </ci>
+              <ci> I </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI25" id="Treatment_initiation" name="Treatment initiation" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Infectious individuals starting treatment</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI25">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:57:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="I" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="T" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> beta </ci>
+              <ci> I </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI26" id="Death_I" name="Death I" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Natural mortality of infectious individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI26">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:58:08Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="I" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> mu </ci>
+              <ci> I </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI27" id="Recovery" name="Recovery" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Recovery of individuals upon treatment</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI27">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:58:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="T" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="R" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> epsilon </ci>
+              <ci> T </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI28" id="Death_T" name="Death T" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Natural mortality of individuals in treatment</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI28">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:59:14Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="T" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> mu </ci>
+              <ci> T </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI29" id="Death_R" name="Death R" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Natural mortality of recovered individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI29">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T21:59:26Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="R" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> mu </ci>
+              <ci> R </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI30" id="Waning_Immunity__Post_infection" name="Waning Immunity- Post infection" reversible="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Waning of the temporary immunity of recovered individuals</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI30">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2021-02-25T22:07:00Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="R" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Humans </ci>
+              <ci> k </ci>
+              <ci> R </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
