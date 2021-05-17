@@ -1,0 +1,1 @@
+This interactive library of disease models is built using COPASI, CoRC and shinyCOPASI

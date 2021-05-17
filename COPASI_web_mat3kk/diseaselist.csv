@@ -1,0 +1,12 @@
+ID,Description
+--select--, 
+CoViD-19,Covid_Baker_2020.cps
+HSV-2,HSV-2_2020_almonte-vega.cps
+Cholera,cholera.cps
+Dysentry,dysentry_2019_berhe.cps
+Ebola,ebola_espinoza_2018.cps
+Malaria,malaria_2019_brauer.cps
+Measles,measles_2006_tessa.cps
+Tuberculosis,tuberculosis_feng_2000.cps
+Typhoid,typhoid.cps
+Zika,zika2017bonyah.cps
