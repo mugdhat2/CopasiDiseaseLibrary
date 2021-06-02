@@ -221,12 +221,15 @@ server <- function(input, output, session) {
     }
     else if (selectedTask == 'Model' || inputFile$modelLoaded == T){
       strOut= paste('<pre><b> Model: </b>',inputFile$modelAttrs[[2]],'<br>')
-      strOut= paste(strOut,'<pre><table><tr><th>Time Unit:</th><td>',inputFile$modelAttrs[[4]]
-                    ,'</td><th>Volume Unit:</th><td>',inputFile$modelAttrs[[5]],'</td></tr>')
-      strOut= paste(strOut,'<tr><th>Quantity Unit:</th><td>',inputFile$modelAttrs[[8]]
-                    ,'</td><th>Area Unit:</th><td>',inputFile$modelAttrs[[6]],'</td></tr>')
-      strOut= paste(strOut,'<tr><th>Avogadro Constant:</th><td>',inputFile$modelAttrs[[10]]
-                    ,'</td><th>Length Unit:</th><td>',inputFile$modelAttrs[[7]],'</td></tr></table></pre></pre>')
+      # strOut= paste(strOut,'<pre><table><tr><th>Time Unit:</th><td>',inputFile$modelAttrs[[4]]
+      #               ,'</td><th>Volume Unit:</th><td>',inputFile$modelAttrs[[5]],'</td></tr>')
+      # strOut= paste(strOut,'<tr><th>Quantity Unit:</th><td>',inputFile$modelAttrs[[8]]
+      #               ,'</td><th>Area Unit:</th><td>',inputFile$modelAttrs[[6]],'</td></tr>')
+      # strOut= paste(strOut,'<tr><th>Avogadro Constant:</th><td>',inputFile$modelAttrs[[10]]
+      #               ,'</td><th>Length Unit:</th><td>',inputFile$modelAttrs[[7]],'</td></tr></table></pre></pre>')
+      strOut= paste(strOut,'<pre><table><tr><th>Time Unit:</th><td>',inputFile$modelAttrs[[4]],'<tr><th>Quantity Unit:</th><td>',inputFile$modelAttrs[[8]],'</td></tr></table></pre></pre>')
+      strOut= paste(strOut,"<center>",img(src=gsub(".cps", ".png", input$datafile), width=250))
+      strOut= paste(strOut,includeMarkdown(paste0("www/captions/",gsub(".cps", ".md", input$datafile))))
       }
     return(strOut)
   })
