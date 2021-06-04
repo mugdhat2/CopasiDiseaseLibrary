@@ -162,6 +162,19 @@ server <- function(input, output, session) {
       theme(panel.grid=element_line(linetype='dashed', color='light grey', size=0.2),axis.ticks.length=unit(-0.15, 'cm'),axis.text.x = element_text(margin=unit(c(0.25,0.25,0.25,0.25),'cm')),axis.text.y = element_text(margin=unit(c(0.25,0.25,0.25,0.25),'cm')))
   }
   
+  # observeEvent(input$docLink,{
+  #   updateNavbarPage(session, "",
+  #                     selected = "Documentation")
+  # })
+  # 
+  # output$docModel <- renderUI({
+  #   if (is.null(inputFile$modelData))
+  #     return()
+  #   selectedTask = selection()
+  #   if (selectedTask == 'Model' || inputFile$modelLoaded == T){
+  #   actionLink("docLink", "Read more about the model and its analysis")
+  #   }
+  # })
   output$modelInfo <- renderText({
     if (is.null(inputFile$modelData))
       return()
@@ -229,7 +242,7 @@ server <- function(input, output, session) {
       #               ,'</td><th>Length Unit:</th><td>',inputFile$modelAttrs[[7]],'</td></tr></table></pre></pre>')
       strOut= paste(strOut,'<pre><table><tr><th>Time Unit:</th><td>',inputFile$modelAttrs[[4]],'<tr><th>Quantity Unit:</th><td>',inputFile$modelAttrs[[8]],'</td></tr></table></pre></pre>')
       strOut= paste(strOut,"<center>",img(src=gsub(".cps", ".png", input$datafile), width=250))
-      strOut= paste(strOut,includeMarkdown(paste0("www/captions/",gsub(".cps", ".md", input$datafile))))
+      #strOut= paste(strOut,includeMarkdown(paste0("www/captions/",gsub(".cps", ".md", input$datafile))))
       }
     return(strOut)
   })

@@ -62,6 +62,7 @@ ui <- fluidPage(
                         mainPanel(tags$style(type='text/css', '#errorOut {background-color: rgba(255,255,0,0.40); color: red;}'),
                                   verbatimTextOutput('errorOut'),
                                   htmlOutput('modelInfo'),
+                                  uiOutput('docModel'),
                                   uiOutput('choose_options',inline = T),
                                   tags$hr(),
                                   uiOutput('choose_columns',inline = T),
