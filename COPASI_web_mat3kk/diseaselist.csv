@@ -1,12 +1,12 @@
-ID,Description
---select--, 
-CoViD-19,covid.cps
-HSV-2,hsv-2.cps
-Cholera,cholera.cps
-Dysentery,dysentery.cps
-Ebola,ebola.cps
-Malaria,malaria.cps
-Measles,measles.cps
-Tuberculosis,tuberculosis.cps
-Typhoid,typhoid.cps
-Zika,zika.cps
+ID,Description,Type
+--select--, , 
+CoViD-19,covid.cps,Airborne
+HSV-2,hsv-2.cps,Sexually-transmitted
+Cholera,cholera.cps,Water-borne
+Dysentery,dysentery.cps,Water-borne
+Ebola,ebola.cps,Airborne
+Malaria,malaria.cps,Vector-borne
+Measles,measles.cps,Airborne
+Tuberculosis,tuberculosis.cps,Airborne
+Typhoid,typhoid.cps,Water-borne
+Zika,zika.cps,Vector-borne

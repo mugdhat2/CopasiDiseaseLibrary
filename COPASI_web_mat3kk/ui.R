@@ -19,6 +19,8 @@ if(!('CoRC' %in% installed.packages()[, 'Package'])){
   CoRC::getCopasi()
 }
 
+source("pdf_loc.R")
+i <<- 0
 diseaseList = read.csv("diseaselist.csv", stringsAsFactors = F)
 choices = setNames(diseaseList$Description,diseaseList$ID)
 
@@ -27,7 +29,7 @@ ui <- fluidPage(
   img(src="inst_bicomplex_4c_c.jpg", width=250),
   img(src="copasi_new.png", width= 200, align= 'right'),
   titlePanel(title='Disease Modeling Library', windowTitle = 'Disease Modeling Library using ShinyCOPASI'),
-  navbarPage("",
+  navbarPage("", id = "navbar",
              tabPanel("Home",
                       includeMarkdown("home.md")
              ),
@@ -39,8 +41,9 @@ ui <- fluidPage(
                       sidebarLayout(
                         sidebarPanel(
                           useShinyjs(),
-                          div(id = "form",style='height: 70px;',selectInput('datafile', 'Select a model:',
-                                                                            choices,
+                          div(id = "form",style='height: 70px;',selectizeInput('datafile', 'Select a model:',
+                                                                               list(" " = c(" "), "Water-borne" = choices[which(diseaseList$Type == "Water-borne")], "Airborne" = choices[which(diseaseList$Type == "Airborne")], "Vector-borne" = choices[which(diseaseList$Type == "Vector-borne")], "Sexually-transmitted" = choices[which(diseaseList$Type == "Sexually-transmitted")]),
+                                                                           # choices,
                                                                             #c("--select--" ="", "Cholera"="cholera.cps", "Typhoid" = "typhoid.cps", "Dysentry" = "dysentry_2019_berhe.cps", "HSV--2" = "HSV-2_2020_almonte-vega.cps"),
                                                                             selected = "")
                           ),
@@ -75,12 +78,12 @@ ui <- fluidPage(
              tabPanel("About",
                       includeMarkdown("about.md")
              ),
-             navbarMenu("More",
-                        tabPanel("Downloads",
-                                 includeMarkdown("downloads.md")),
-                        tabPanel("Documentation",
-                                 tags$iframe(style="height:600px; width:100%", src="Disease_library_for_COPASI(1).pdf"))
-                        )
+             tabPanel("Downloads",
+                       includeMarkdown("downloads.md")),
+             tabPanel("Documentation",
+                       tags$iframe(style="height:600px; width:100%", src=pdf_loc(i)#"Disease_library_for_COPASI(1).pdf"
+                                   ))
+                        
              ),
   hr(),
   print("Cite as: Biocomplexity Institute (University of Virginia), Disease Model Library, <url>, 2021, Accessed: DD/MM/YYYY")

@@ -73,6 +73,12 @@ server <- function(input, output, session) {
     reset("form")
   })
   
+  observeEvent(input$doc, {
+    i<<- 1
+    #session$reload()
+    updateTabsetPanel(session, "navbar", selected = "Documentation")
+  })
+  
   selection <- renderText({
     return(unlist(get_selected(input$taskSelection)))
   })
@@ -241,8 +247,10 @@ server <- function(input, output, session) {
       # strOut= paste(strOut,'<tr><th>Avogadro Constant:</th><td>',inputFile$modelAttrs[[10]]
       #               ,'</td><th>Length Unit:</th><td>',inputFile$modelAttrs[[7]],'</td></tr></table></pre></pre>')
       strOut= paste(strOut,'<pre><table><tr><th>Time Unit:</th><td>',inputFile$modelAttrs[[4]],'<tr><th>Quantity Unit:</th><td>',inputFile$modelAttrs[[8]],'</td></tr></table></pre></pre>')
-      strOut= paste(strOut,"<center>",img(src=gsub(".cps", ".png", input$datafile), width=250))
-      #strOut= paste(strOut,includeMarkdown(paste0("www/captions/",gsub(".cps", ".md", input$datafile))))
+      strOut= paste(strOut,"<center>",img(src=gsub(".cps", ".png", input$datafile), width=250), "<br>")
+     
+      strOut= paste(strOut,includeMarkdown(paste0("www/captions/",gsub(".cps", ".md", input$datafile))))
+      strOut= paste(strOut, eval(str2expression("actionLink('doc', 'Click here for documentation')")))
       }
     return(strOut)
   })
