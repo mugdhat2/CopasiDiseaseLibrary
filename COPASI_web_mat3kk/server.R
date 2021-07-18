@@ -769,7 +769,9 @@ server <- function(input, output, session) {
     attr(structTree[[2]],'stopened')=TRUE 
     structTree
   })
-  
-  
+
+# Would the following allow reconnecting to the same web session to continue work?  
+#  session$allowReconnect(TRUE) 
+
   session$onSessionEnded(stopApp)
 }
