@@ -6,6 +6,8 @@
 
 ## server file
 
+library(CoRC)
+
 source("list_init.R")
 server <- function(input, output, session) {
  
