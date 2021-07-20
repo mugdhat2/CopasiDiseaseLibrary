@@ -11,7 +11,7 @@ then
     singularity instance stop $INSTANCE_NAME
 else
     ACTION=starting
-    singularity instance start COPASI_Disease_Lib_Shiny.sif $INSTANCE_NAME
+    singularity instance start --writable-tmpfs COPASI_Disease_Lib_Shiny.sif $INSTANCE_NAME
 
     echo still need to make the image report that it is serving the app on . . .
     echo "localhost:4285"
