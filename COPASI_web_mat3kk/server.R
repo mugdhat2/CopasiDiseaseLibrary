@@ -2,6 +2,7 @@
 # distributed under the Artistic License 2.0
 
 # Mugdha Thakur University of Virginia
+# mat3kk@virginia.edu
 # April 2021
 
 ## server file
@@ -160,7 +161,8 @@ server <- function(input, output, session) {
                             ,'Global Quantities', 'Events', 'Parameters'
                             ,'Stoichiometry','Steady State','Time Course'
                             ,'Metabolic Control Analysis','Optimization'
-                            ,'Parameter Estimation', 'Linear Noise Approximation')
+                           ,'Parameter Estimation', 'Linear Noise Approximation'
+                            )
   })
   
   

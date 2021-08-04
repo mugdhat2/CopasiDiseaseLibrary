@@ -2,6 +2,7 @@
 # distributed under the Artistic License 2.0
 
 # Mugdha Thakur University of Virginia
+# mat3kk@virginia.edu
 # April 2021
 
 check.packages <- function(pkg){
@@ -25,9 +26,9 @@ choices = setNames(diseaseList$Description,diseaseList$ID)
 
 ui <- fluidPage(
   tags$hr(style="border-width: 2px;border-color: #EB7703;"),
-  img(src="inst_bicomplex_4c_c.jpg", width=250),
-  img(src="copasi_new.png", width= 200, align= 'right'),
-  titlePanel(title='Disease Modeling Library', windowTitle = 'Disease Modeling Library using ShinyCOPASI'),
+  img(src="inst_bicomplex_4c_c.jpg", width=200),
+  img(src="copasi_new.png", width= 170, align= 'right'),
+  titlePanel(h1(img(src="dismolib.png", width= 300), align = 'center'), windowTitle = 'dismolib'),
   navbarPage("", id = "navbar",
              tabPanel("Home",
                       includeMarkdown("home.md")
@@ -85,5 +86,5 @@ ui <- fluidPage(
                         
              ),
   hr(),
-  print("Cite as: Biocomplexity Institute (University of Virginia), Disease Model Library, <url>, 2021, Accessed: DD/MM/YYYY")
+  print(paste0("Cite as: Biocomplexity Institute (University of Virginia), Disease Model Library, http://dismolib.uvadcos.io/, 2021 [Accessed: ", format(Sys.Date(), "%m/%d/%Y"), "]"))
 )

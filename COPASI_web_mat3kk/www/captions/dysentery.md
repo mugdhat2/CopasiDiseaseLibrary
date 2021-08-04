@@ -1,4 +1,4 @@
-The health states are Susceptible (S), Infected (I) and Recovered (R) individuals. The infectious pathogen is denoted by B.
+The health states are Susceptible (S), Infected (I) and Recovered ( R) individuals. The infectious pathogen is denoted by B.
 
 Susceptible individuals are recruited and die out naturally, regardless of their health status. Susceptible individuals become infected by contact with infectious individuals or by ingesting the infectious pathogen. Infected individuals recover, or die from natural causes or by disease-induced deaths. Recovered individuals die out or are temporarily immune, before becoming susceptible again. The infectious pathogen is assumed to be shed by infectious individuals, and the pathogen clears naturally.
 
