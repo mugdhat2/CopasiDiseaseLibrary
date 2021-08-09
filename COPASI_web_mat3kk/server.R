@@ -77,10 +77,17 @@ server <- function(input, output, session) {
   })
   
   observeEvent(input$doc, {
-    i<<- 1
+    #i<<- 1
     #session$reload()
     updateTabsetPanel(session, "navbar", selected = "Documentation")
   })
+ 
+  observeEvent(input$modelTab, {
+    #session$reload()
+    updateTabsetPanel(session, "navbar", selected = "Models")
+  })
+  
+  
   
   selection <- renderText({
     return(unlist(get_selected(input$taskSelection)))
@@ -775,7 +782,7 @@ server <- function(input, output, session) {
   })
 
 # Would the following allow reconnecting to the same web session to continue work?  
-#  session$allowReconnect(TRUE) 
+ session$allowReconnect(TRUE) 
  # session$allowReconnect("force")
   session$onSessionEnded(stopApp)
 }

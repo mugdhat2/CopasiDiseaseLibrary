@@ -12,15 +12,16 @@ check.packages <- function(pkg){
   sapply(pkg, require, character.only = TRUE)
 }
 
-packages<-c('shiny','shinyjs', 'remotes', 'reshape2', 'ggplot2', 'shinyTree', 'markdown', 'formattable','XML','DT')
+packages<-c('shiny','shinyjs', 'remotes', 'reshape2', 'ggplot2', 'shinyTree', 'markdown', 'formattable','XML','DT','knitr')
 check.packages(packages)
 
 if(!('CoRC' %in% installed.packages()[, 'Package'])){
   install_github('jpahle/CoRC')
 }
 
-source("pdf_loc.R")
-i <<- 0
+
+#source("pdf_loc.R")
+#i <<- 0
 diseaseList = read.csv("diseaselist.csv", stringsAsFactors = F)
 choices = setNames(diseaseList$Description,diseaseList$ID)
 
@@ -31,7 +32,9 @@ ui <- fluidPage(
   titlePanel(h1(img(src="dismolib.png", width= 300), align = 'center'), windowTitle = 'dismolib'),
   navbarPage("", id = "navbar",
              tabPanel("Home",
-                      includeMarkdown("home.md")
+                     # includeMarkdown("home.md")
+                     includeMarkdown(knit('home2.rmd', quiet = TRUE))
+                     
              ),
              tabPanel("Models",
                       #fluidPage(
