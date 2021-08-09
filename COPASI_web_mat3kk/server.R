@@ -776,6 +776,6 @@ server <- function(input, output, session) {
 
 # Would the following allow reconnecting to the same web session to continue work?  
 #  session$allowReconnect(TRUE) 
-
+ # session$allowReconnect("force")
   session$onSessionEnded(stopApp)
 }
