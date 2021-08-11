@@ -3,8 +3,7 @@ name: Container Build CI
 on:
   push:
     branches:
-    - 'main'
-    - 'master'
+    - 'test'
 
 jobs:
   build:
@@ -30,7 +29,7 @@ jobs:
         with:
           push: true
           no-cache: true
-          tags: ghcr.io/nssac/dismolib:latest
+          tags: ghcr.io/nssac/dismolib:test
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
