@@ -44,11 +44,11 @@ ui <- fluidPage(
                       sidebarLayout(
                         sidebarPanel(
                           useShinyjs(),
-                          div(id = "form",style='height: 70px;',selectizeInput('datafile', 'Select a model:',
-                                                                               list(" " = c(" "), "Water-borne" = choices[which(diseaseList$Type == "Water-borne")], "Airborne" = choices[which(diseaseList$Type == "Airborne")], "Vector-borne" = choices[which(diseaseList$Type == "Vector-borne")], "Sexually-transmitted" = choices[which(diseaseList$Type == "Sexually-transmitted")]),
-                                                                           # choices,
-                                                                            #c("--select--" ="", "Cholera"="cholera.cps", "Typhoid" = "typhoid.cps", "Dysentry" = "dysentry_2019_berhe.cps", "HSV--2" = "HSV-2_2020_almonte-vega.cps"),
-                                                                            selected = "")
+                          div(id = "form",style='height: 70px;',
+                              selectizeInput('datafile', 'Select a model:',
+                              split(choices[diseaseList$ID], diseaseList$Type),
+                              
+                              selected = "")
                           ),
                           downloadButton("downloadFile", "Download COPASI file"),
                           downloadButton("downloadSBML", "Download SBML file"),
@@ -89,5 +89,5 @@ ui <- fluidPage(
                         
              ),
   hr(),
-  print(paste0("Cite as: Biocomplexity Institute (University of Virginia), Disease Model Library, http://dismolib.uvadcos.io/, 2021 [Accessed: ", format(Sys.Date(), "%m/%d/%Y"), "]"))
+  print(paste0("Cite as: Biocomplexity Institute (University of Virginia), dismolib, http://dismolib.uvadcos.io/, 2021 [Accessed: ", format(Sys.Date(), "%m/%d/%Y"), "]"))
 )
